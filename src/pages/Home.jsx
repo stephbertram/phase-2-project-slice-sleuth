@@ -4,7 +4,11 @@ const Home = () => {
   return (
     <>
     <header><NavBar /></header>
-    <body><h2>hello</h2></body>
+
+    <main>
+      <h1>Home Page</h1>
+    </main>
+
     </>
   )
 }
