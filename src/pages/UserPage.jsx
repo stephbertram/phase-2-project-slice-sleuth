@@ -1,8 +1,16 @@
-import React from 'react'
+import NavBar from "../Components/NavBar"
+
 
 const UserPage = () => {
   return (
-    <div>UserPage</div>
+    <>
+    <header><NavBar /></header>
+
+    <main>
+      <h1>User Page</h1>
+    </main>
+
+    </>
   )
 }
 

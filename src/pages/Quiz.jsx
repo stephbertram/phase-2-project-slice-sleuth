@@ -1,8 +1,16 @@
-import React from 'react'
+import NavBar from "../Components/NavBar"
+
 
 const Quiz = () => {
   return (
-    <div>Quiz</div>
+    <>
+    <header><NavBar /></header>
+
+    <main>
+      <h1>Play Slice Sleuth</h1>
+    </main>
+
+    </>
   )
 }
 
