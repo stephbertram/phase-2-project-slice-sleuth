@@ -25,14 +25,17 @@ const Quiz = () => {
   return (
 
     <>
-    {error ? <p>{error}</p> : null}
-    <header><NavBar /></header>
-
-    <main>
-      <h1>Play Slice Sleuth</h1>
-      <h2>Hello (UserName)</h2>
-      {mappedPizzas}
-    </main>
+      {error ? <p>{error}</p> : null}
+      <header>
+        <NavBar />
+      </header>
+      <main>
+        <div>
+          <h2>Play Slice Sleuth</h2>
+          <h3>Hello (UserName)</h3>
+        </div>
+        {mappedPizzas}
+      </main>
 
     </>
   )

@@ -1,6 +1,7 @@
 
 import SignUp from "../Components/SignUp"
 import {useState} from 'react'
+import NavBar from "../Components/NavBar"
 
 const Home = () => {
 
@@ -12,12 +13,12 @@ const Home = () => {
 
   return (
     <>
-    <header></header>
-
-    <main>
-      <h1>Home Page</h1>
-      <SignUp onHandleUserSubmit={onHandleUserSubmit}/>
-    </main>
+      <header>
+        <NavBar />    
+      </header>
+      <main>
+        <SignUp onHandleUserSubmit={onHandleUserSubmit}/>
+      </main>
 
     </>
   )
