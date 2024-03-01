@@ -32,20 +32,20 @@ function SignUp(onHandleUserSubmit) {
     
 
     return (
-      <>
+      <div>
         {error ? <p>{error}</p> : null}
         <main>
-          <h1>Login</h1>
+          <h3>Create a username to play:</h3>
           <form onSubmit ={handleSubmit}>
             <div>
-              <label>Username: </label>
               <input id="username" type="text" name="username" placeholder="Username" value={formData.username} onChange={handleChange}/>
             </div>
-            <br></br>
-            <button onClick={handleSubmit}><Link to={'../quiz/'}>Time to test your knowledge</Link></button>
+            <div>
+              <button onClick={handleSubmit}><Link to={'../quiz/'}>Time to test your knowledge</Link></button>
+            </div>
           </form>
         </main>
-      </>
+      </div>
     );
   }
   

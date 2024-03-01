@@ -3,17 +3,16 @@ import './NavBar.css'
 
 function NavBar() {
   return (
-    <nav className="navbar">
-      <NavLink to="/" className="nav-link">
-        Home
-      </NavLink>
-      <NavLink to="/quiz" className="nav-link">
-        Pizza Sleuth
-      </NavLink>
-      <NavLink to="/userPage" className="nav-link">
-        User page
-      </NavLink>
-    </nav>
+    <div>
+          <h1>Slice Sleuth</h1>
+          <nav className="navbar">
+              <ul>
+                <li><NavLink to="/" className="nav-link">Home</NavLink></li>
+                <li><NavLink to="/quiz" className="nav-link">Slice Sleuth</NavLink></li>
+                <li><NavLink to="/userPage" className="nav-link">User Info</NavLink></li> 
+              </ul>
+          </nav>
+    </div>
   );
 }
 
