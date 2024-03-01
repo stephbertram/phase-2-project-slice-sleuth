@@ -1,12 +1,12 @@
-import React from 'react'
+import '../styles.css'
 
-const PizzaCard = ({ name, image, AI }) => {
+const PizzaCard = ({ name, image, AI, handleNextPizza }) => {
   return (
-    <div>
-      <img src={image} alt={name}/>
+    <div className = 'pizza-container'>
+      <img className='photo' src={image} alt={name}/>
       <div>
-          <button>Real Pie</button>
-          <button>AI Lie</button>
+          <button className='quiz-page-button' onClick = {handleNextPizza}>Real Pie</button>
+          <button className='quiz-page-button' onClick = {handleNextPizza}>AI Lie</button>
       </div>
     </div>
   )

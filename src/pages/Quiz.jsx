@@ -19,8 +19,15 @@ const Quiz = () => {
     .then(setPizzas)
     .catch((err) => setError(err.message))
   }, []);
+  
+  const handleNextPizza = () => {
+    setPizzas((currentPizza) => [
+      ...currentPizza.slice(1)
+    ])
+  }
 
-  const mappedPizzas = pizzas.map((pizza) => (<PizzaCard {...pizza} key={pizza.id}/>))
+  const mappedPizzas = pizzas.slice(0,1).map((pizza) => (<PizzaCard {...pizza} key={pizza.id} handleNextPizza={handleNextPizza}/>))
+
 
   return (
 
