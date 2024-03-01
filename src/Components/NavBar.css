@@ -1,10 +1,10 @@
 .navbar > a{
     display: inline-block;
     box-sizing: border-box;
-    width: 70px;
+    width: 100px;
     padding: 5px;
     margin: 0 6px 6px;
-    background: lightblue;
+    background: rgb(251, 106, 43);
     text-decoration: none;
     text-align: center;
     font-size: min(10vw, 15px) ;
@@ -12,6 +12,6 @@
 }
   
 a.active {
-    background: black;
+    background: rgb(198, 0, 0);
     color: white;
 }
