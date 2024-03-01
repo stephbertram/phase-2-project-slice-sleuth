@@ -1,70 +1,70 @@
 {
-    "pizzas": [
-      {
-        "id": 1,
-        "name": "Pizza 1",
-        "image": "https://ibb.co/GF6tSYt",
-        "AI": true
-      },
-      {
-        "id": 2,
-        "name": "Pizza 2",
-        "image": "https://ibb.co/rkG28nY",
-        "AI": false
-      },
-      {
-        "id": 3,
-        "name": "Pizza 3",
-        "image": "https://ibb.co/sJ5rjMh",
-        "AI": false
-      },
-      {
-        "id": 4,
-        "name": "Pizza 4",
-        "image": "https://ibb.co/c3pX63t",
-        "price": true
-      },
-      {
-        "id": 5,
-        "name": "Pizza 5",
-        "image": "https://ibb.co/dW5XbQ1",
-        "AI": true
-      },
-      {
-        "id": 6,
-        "name": "Pizza 6",
-        "image": "https://ibb.co/LZbQwpV",
-        "AI": true
-      },
-      {
-        "id": 7,
-        "name": "Pizza 7",
-        "image": "https://soojung-kim.imgbb.com",
-        "AI": false
-      },
-      {
-        "id": 8,
-        "name": "Pizza 8",
-        "image": "https://ibb.co/Fnt26qc",
-        "AI": false
-      },
-      {
-        "id": 9,
-        "name": "Pizza 9",
-        "image": "https://ibb.co/Wz0KqFs",
-        "AI": false
-      },
-      {
-        "id": 10,
-        "name": "Pizza 10",
-        "image": "https://ibb.co/x1jP36Q",
-        "AI": true
-      }
-    ],
-    "users": [
-      {
-        "id": 1,
-        "username": ""
-      }
-    ]
-  }
+  "pizzas": [
+    {
+      "id": "1",
+      "name": "Pizza 1",
+      "image": "https://ibb.co/GF6tSYt",
+      "AI": true
+    },
+    {
+      "id": "2",
+      "name": "Pizza 2",
+      "image": "https://ibb.co/rkG28nY",
+      "AI": false
+    },
+    {
+      "id": "3",
+      "name": "Pizza 3",
+      "image": "https://ibb.co/sJ5rjMh",
+      "AI": false
+    },
+    {
+      "id": "4",
+      "name": "Pizza 4",
+      "image": "https://ibb.co/c3pX63t",
+      "price": true
+    },
+    {
+      "id": "5",
+      "name": "Pizza 5",
+      "image": "https://ibb.co/dW5XbQ1",
+      "AI": true
+    },
+    {
+      "id": "6",
+      "name": "Pizza 6",
+      "image": "https://ibb.co/LZbQwpV",
+      "AI": true
+    },
+    {
+      "id": "7",
+      "name": "Pizza 7",
+      "image": "https://soojung-kim.imgbb.com",
+      "AI": false
+    },
+    {
+      "id": "8",
+      "name": "Pizza 8",
+      "image": "https://ibb.co/Fnt26qc",
+      "AI": false
+    },
+    {
+      "id": "9",
+      "name": "Pizza 9",
+      "image": "https://ibb.co/Wz0KqFs",
+      "AI": false
+    },
+    {
+      "id": "10",
+      "name": "Pizza 10",
+      "image": "https://ibb.co/x1jP36Q",
+      "AI": true
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": ""
+    }
+  ]
+}
