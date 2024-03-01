@@ -22,7 +22,7 @@
       "id": "4",
       "name": "Pizza 4",
       "image": "https://res.cloudinary.com/drdtxuiez/image/upload/v1709314177/Pizzas4_whiter.jpg",
-      "price": true
+      "AI": true
     },
     {
       "id": "5",

@@ -1,12 +1,15 @@
 import NavBar from "../Components/NavBar"
 import {useEffect, useState} from 'react'
 import PizzaCard from "../Components/PizzaCard"
+import {Link} from "react-router-dom"
 
 
 const Quiz = () => {
 
   const [pizzas, setPizzas] = useState([])
   const [error, setError] = useState('')
+  const [score, setScore] = useState(0)
+  const pizza = pizzas[0] 
 
   useEffect(() => {
     fetch('http://localhost:3000/pizzas')
@@ -19,14 +22,19 @@ const Quiz = () => {
     .then(setPizzas)
     .catch((err) => setError(err.message))
   }, []);
-  
-  const handleNextPizza = () => {
+
+  const handleNextPizza = (event) => {
     setPizzas((currentPizza) => [
       ...currentPizza.slice(1)
     ])
-  }
 
-  const mappedPizzas = pizzas.slice(0,1).map((pizza) => (<PizzaCard {...pizza} key={pizza.id} handleNextPizza={handleNextPizza}/>))
+    if(event.target.value === 'AIpie' && pizza.AI === true) {
+      setScore((currentScore) => currentScore + 1 )
+    }
+    else if(event.target.value === 'realpie' && pizza.AI === false){
+      setScore((currentScore) => currentScore + 1 )
+    }
+  }
 
 
   return (
@@ -41,10 +49,20 @@ const Quiz = () => {
           <h2>Play Slice Sleuth</h2>
           <h3>Hello (UserName)</h3>
         </div>
-        {mappedPizzas}
+        {pizza ?
+        <PizzaCard {...pizza} key={pizza.id} handleNextPizza={handleNextPizza} score={score}/> :
+        score > 6 ? 
+          <>
+          <h1>Your score is {score}. Amazing!</h1> 
+          <button><Link to={'../userPage/'}>Check out your score</Link></button>
+          </>
+          : 
+          <>
+          <h1>Your score is {score}. You can do better!</h1>
+          <button><Link to={'../userPage/'}>Check out your score</Link></button>
+          </>}
       </main>
-
-    </>
+      </>
   )
 }
 
