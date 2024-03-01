@@ -4,67 +4,149 @@
       "id": "1",
       "name": "Pizza 1",
       "image": "https://res.cloudinary.com/drdtxuiez/image/upload/v1709314179/AI1_tsrbg5.jpg",
-      "AI": true
+      "AI": true,
+      "round": "1"
     },
     {
       "id": "2",
       "name": "Pizza 2",
       "image": "https://res.cloudinary.com/drdtxuiez/image/upload/v1709314181/Pizza-2_ktarhg.jpg",
-      "AI": false
+      "AI": false,
+      "round": "1"
     },
     {
       "id": "3",
       "name": "Pizza 3",
       "image": "https://res.cloudinary.com/drdtxuiez/image/upload/v1709314182/Pizza3_jr1qgi.jpg",
-      "AI": false
+      "AI": false,
+      "round": "1"
     },
     {
       "id": "4",
       "name": "Pizza 4",
       "image": "https://res.cloudinary.com/drdtxuiez/image/upload/v1709314177/Pizzas4_whiter.jpg",
-      "AI": true
+      "AI": true,
+      "round": "1"
     },
     {
       "id": "5",
       "name": "Pizza 5",
       "image": "https://res.cloudinary.com/drdtxuiez/image/upload/v1709314179/Pizza-5_zi3l7l.png",
-      "AI": true
+      "AI": true,
+      "round": "1"
     },
     {
       "id": "6",
       "name": "Pizza 6",
       "image": "https://res.cloudinary.com/drdtxuiez/image/upload/v1709314179/Pizza-6_nzkftt.jpg",
-      "AI": true
+      "AI": true,
+      "round": "1"
     },
     {
       "id": "7",
       "name": "Pizza 7",
       "image": "https://res.cloudinary.com/drdtxuiez/image/upload/v1709314185/Pizza-7_f2x3kr.jpg",
-      "AI": false
+      "AI": false,
+      "round": "1"
     },
     {
       "id": "8",
       "name": "Pizza 8",
       "image": "https://res.cloudinary.com/drdtxuiez/image/upload/v1709314183/Pizza-8_ve8oja.jpg",
-      "AI": false
+      "AI": false,
+      "round": "1"
     },
     {
       "id": "9",
       "name": "Pizza 9",
       "image": "https://res.cloudinary.com/drdtxuiez/image/upload/v1709314183/Pizza-9_dp0n66.jpg",
-      "AI": false
+      "AI": false,
+      "round": "1"
     },
     {
       "id": "10",
       "name": "Pizza 10",
       "image": "https://res.cloudinary.com/drdtxuiez/image/upload/v1709314178/Pizza-10_qaixgc.jpg",
-      "AI": true
+      "AI": true,
+      "round": "1"
+    },
+    {
+      "id": "1",
+      "name": "Pizza 1",
+      "image": "https://res.cloudinary.com/drdtxuiez/image/upload/v1709314179/AI1_tsrbg5.jpg",
+      "AI": true,
+      "round": "2"
+    },
+    {
+      "id": "2",
+      "name": "Pizza 2",
+      "image": "https://res.cloudinary.com/drdtxuiez/image/upload/v1709314181/Pizza-2_ktarhg.jpg",
+      "AI": false,
+      "round": "2"
+    },
+    {
+      "id": "3",
+      "name": "Pizza 3",
+      "image": "https://res.cloudinary.com/drdtxuiez/image/upload/v1709314182/Pizza3_jr1qgi.jpg",
+      "AI": false,
+      "round": "2"
+    },
+    {
+      "id": "4",
+      "name": "Pizza 4",
+      "image": "https://res.cloudinary.com/drdtxuiez/image/upload/v1709314177/Pizzas4_whiter.jpg",
+      "AI": true,
+      "round": "2"
+    },
+    {
+      "id": "5",
+      "name": "Pizza 5",
+      "image": "https://res.cloudinary.com/drdtxuiez/image/upload/v1709314179/Pizza-5_zi3l7l.png",
+      "AI": true,
+      "round": "2"
+    },
+    {
+      "id": "6",
+      "name": "Pizza 6",
+      "image": "https://res.cloudinary.com/drdtxuiez/image/upload/v1709314179/Pizza-6_nzkftt.jpg",
+      "AI": true,
+      "round": "2"
+    },
+    {
+      "id": "7",
+      "name": "Pizza 7",
+      "image": "https://res.cloudinary.com/drdtxuiez/image/upload/v1709314185/Pizza-7_f2x3kr.jpg",
+      "AI": false,
+      "round": "2"
+    },
+    {
+      "id": "8",
+      "name": "Pizza 8",
+      "image": "https://res.cloudinary.com/drdtxuiez/image/upload/v1709314183/Pizza-8_ve8oja.jpg",
+      "AI": false,
+      "round": "2"
+    },
+    {
+      "id": "9",
+      "name": "Pizza 9",
+      "image": "https://res.cloudinary.com/drdtxuiez/image/upload/v1709314183/Pizza-9_dp0n66.jpg",
+      "AI": false,
+      "round": "2"
+    },
+    {
+      "id": "10",
+      "name": "Pizza 10",
+      "image": "https://res.cloudinary.com/drdtxuiez/image/upload/v1709314178/Pizza-10_qaixgc.jpg",
+      "AI": true,
+      "round": "2"
     }
   ],
   "users": [
     {
       "id": "1",
-      "username": ""
+      "username": "",
+      "score1": "",
+      "score2": ""
     }
   ]
 }
