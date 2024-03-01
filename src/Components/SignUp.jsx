@@ -1,10 +1,13 @@
 import {useState} from 'react';
 import { Link } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
 
 const initialState = {
+  id: uuidv4(),
   username: "",
+  score1: "",
+  score2: ""
 };
-
 
 function SignUp(onHandleUserSubmit) {
   const [formData, setFormData] = useState(initialState)
@@ -16,13 +19,12 @@ function SignUp(onHandleUserSubmit) {
       fetch("http://localhost:3000/users", {
         method: "POST",
         headers: {
-          "Content-Type": "Application/JSON", 
+          "Content-Type": "application/json", 
         },
         body: JSON.stringify(formData)
       })
         .then(resp => resp.json())
         .then(newUser => onHandleUserSubmit(newUser))
-        setFormData(initialState)
         .catch(err => setError(err.message))
     }
 
@@ -41,7 +43,7 @@ function SignUp(onHandleUserSubmit) {
               <input id="username" type="text" name="username" placeholder="Username" value={formData.username} onChange={handleChange}/>
             </div>
             <div>
-              <button onClick={handleSubmit}><Link to={'../quiz/'}>Time to test your knowledge</Link></button>
+              {formData.username === '' ? <p>You must log in first</p> : <button className='homepage-button' onClick={handleSubmit}><Link to={'../quiz/'}>Time to test your knowledge</Link></button>}
             </div>
           </form>
         </main>
