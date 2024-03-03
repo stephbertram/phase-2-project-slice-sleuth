@@ -12,9 +12,7 @@ const Quiz = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [round, setRound] = useState(1)
   const currentPizzas = pizzas.filter(p => p.round == round)
-
   const displayPizza = currentPizzas[currentIndex]
-
   const URL = 'http://localhost:3000/pizzas'
 
   const newRound = () => {
@@ -63,7 +61,6 @@ const Quiz = () => {
       <main>
         <div>
           <h2>Play Slice Sleuth</h2>
-          <h3>Hello (UserName)</h3>
         </div>
         {/* create display pizza container? */}
         {displayPizza ?
