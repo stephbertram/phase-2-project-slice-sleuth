@@ -1,9 +1,14 @@
+import { createRoot } from "react-dom/client";
+import { router } from "./routes";
 
-import ReactDOM from 'react-dom/client'
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import routes from "./routes"
+import { RouterProvider } from "react-router-dom";
+import UsersProvider from "./context/UsersProvider";
 
-const router = createBrowserRouter(routes);
+const rootElement = document.getElementById("root");
+const root = createRoot(rootElement);
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<RouterProvider router={router} />);
+root.render(
+  <UsersProvider>
+    <RouterProvider router={router} />
+  </UsersProvider>
+);

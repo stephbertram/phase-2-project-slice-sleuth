@@ -144,7 +144,25 @@
   "users": [
     {
       "id": "1",
-      "username": "",
+      "username": "user1",
+      "score1": "9",
+      "score2": "2"
+    },
+    {
+      "id": "9682f7f9-206d-425e-8f26-8dd425c6f052",
+      "username": "sooj0106",
+      "score1": "8",
+      "score2": "5"
+    },
+    {
+      "id": "4aacad14-e71f-4630-b495-e5f60b494149",
+      "username": "sooj_gamjaa",
+      "score1": "",
+      "score2": ""
+    },
+    {
+      "id": "4aacad14-e71f-4630-b495-e5f60b494149",
+      "username": "sooj_gamjaa",
       "score1": "",
       "score2": ""
     }
