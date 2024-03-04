@@ -5,6 +5,7 @@ import { Link , useNavigate } from "react-router-dom"
 import { UsersContext } from "../context/UsersProvider"
 import {toast} from "react-hot-toast"
 
+const API = 'http://localhost:3000'
 
 const Quiz = () => {
 
@@ -15,12 +16,11 @@ const Quiz = () => {
   const [round, setRound] = useState(1)
   const currentPizzas = pizzas.filter(p => p.round == round)
   const displayPizza = currentPizzas[currentIndex]
-  const API = 'http://localhost:3000'
-
+  const [buttonClass, setButtonClass] = useState('quiz-button-default')
 
   //! Trying to hardcode user for patching
 
-  const {currentUser} = useContext(UsersContext)
+  const {currentUser, updateUser, updateUserList} = useContext(UsersContext)
   const navigateToHome = useNavigate()
 
   console.log(currentUser)
@@ -54,9 +54,13 @@ const Quiz = () => {
 
     if(event.target.value === 'AIpie' && displayPizza.AI === true) {
       setScore((currentScore) => currentScore + 1 )
+      setButtonClass('correct')
+      setTimeout(() => {setButtonClass('quiz-button-default')}, 2000)
     }
-    else if(event.target.value === 'realpie' && displayPizza.AI === false){
+    else if(event.target.value === 'realpie' && displayPizza.AI === false) {
       setScore((currentScore) => currentScore + 1 )
+      setButtonClass('incorrect')
+      setTimeout(() => {setButtonClass('quiz-button-default')}, 2000)
     }
 
     if(currentIndex + 1 == currentPizzas.length) {
@@ -72,7 +76,11 @@ const Quiz = () => {
       body: JSON.stringify({[`score${round}`]: score}),
     })
       .then(resp => resp.json())
-      // .then((updatedUser) => onUpdateItem(updatedUser))
+      .then(updatedUser => {
+        updateUser(updatedUser)
+        updateUserList(updatedUser)
+      })
+      // .then(updateUserList)
     }
     
     setCurrentIndex(currentIndex => currentIndex + 1);
@@ -92,16 +100,16 @@ const Quiz = () => {
         </div>
         {/* create display pizza container? */}
         {displayPizza ?
-        <PizzaCard {...displayPizza} key={displayPizza.id} handleNextPizza={handleNextPizza} score={score} currentUser={currentUser}/> :
+        <PizzaCard {...displayPizza} key={displayPizza.id} handleNextPizza={handleNextPizza} score={score} currentUser={currentUser} buttonClass={buttonClass}/> :
         score > 6 ? 
           <>
           <h1>Your score is {score}. Amazing!</h1> 
-          <button><Link to={'/scores/'}>Check out your score</Link></button>
+          <button><Link to={'/scores/'}>Check out the leaderboard.</Link></button>
           </>
           : 
           <>
           <h1>Your {currentUser.username} score is {score}. You can do better!</h1>
-          <button><Link to={'/scores/'}>Check out your score</Link></button>
+          <button><Link to={'/scores/'}>Check out the leaderboard.</Link></button>
           </>}
           {!displayPizza && pizzas && round < 2 ? 
             <button onClick={newRound}>Play next round?</button> : null
