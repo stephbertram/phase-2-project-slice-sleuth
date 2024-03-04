@@ -4,13 +4,7 @@ export const UsersContext = React.createContext()
 
 const UsersProvider = ({ children }) => {
     const [users, setUsers] = useState([]);
-
-    const currentUser = {
-        id: 'Steph',
-        username: 'Steph',
-        score1: '',
-        score2: ''
-    }
+    const [currentUser, setCurrentUser] = useState(null)
 
     useEffect(() => {
         (async () => {
@@ -26,10 +20,7 @@ const UsersProvider = ({ children }) => {
 
     const handleAddUser = (createdUser) => {
         setUsers(currentUserList => [createdUser, ...currentUserList]) 
-    }
-
-    const handleUpdateScore = () => {
-
+        setCurrentUser(createdUser)
     }
 
     //! Need to be fixed

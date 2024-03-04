@@ -64,7 +64,7 @@ function SignUp() {
               {!showButton ? 
                 <>
                   <h3>Hello {formData.username} </h3> 
-                  <button className='homepage-button' onClick={handleSubmit}><Link to={'../quiz/'}>Time to test your knowledge</Link></button>
+                  <button className='homepage-button'><Link to={'/quiz'}>Time to test your knowledge</Link></button>
                 </>
                 : null}
             </div>

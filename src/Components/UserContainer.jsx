@@ -5,7 +5,7 @@ import { UsersContext } from '../context/UsersProvider';
 
 function UserContainer() {
   const [searchQuery, setSearchQuery] = useState('')
-  const {users, handleDeleteUser} = useContext(UsersContext)
+  const {currentUser, users, handleDeleteUser} = useContext(UsersContext)
 
   const handleSearch = (event) => {
     setSearchQuery(event.target.value)
@@ -17,7 +17,7 @@ function UserContainer() {
   return (
     <div>
       <SearchBar handleSearch={handleSearch} searchQuery={searchQuery}/>
-      <UserList users={filteredUser} searchQuery={searchQuery} handleDeleteUser={handleDeleteUser}/>
+      <UserList currentUser={currentUser} users={filteredUser} searchQuery={searchQuery} handleDeleteUser={handleDeleteUser}/>
     </div>
   );
 }
