@@ -9,7 +9,7 @@ function NavBar() {
               <ul>
                 <li><NavLink to="/" className="nav-link">Home</NavLink></li>
                 <li><NavLink to="/quiz" className="nav-link">Slice Sleuth</NavLink></li>
-                <li><NavLink to="/userPage" className="nav-link">User Info</NavLink></li> 
+                <li><NavLink to="/scores" className="nav-link">Scores</NavLink></li> 
               </ul>
           </nav>
     </div>
