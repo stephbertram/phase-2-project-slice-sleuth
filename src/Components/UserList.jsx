@@ -1,21 +1,16 @@
-import {useMemo} from 'react'
+// import {useMemo} from 'react'
 import UserCard from './UserCard'
 
 
-const UserList = ({users, searchQuery, handleDeleteUser}) => {
+const UserList = ({users, handleDeleteUser}) => {
 
-    const renderUsers = useMemo(() => users
-    .filter(user => {
-        return( 'hello' ||  (user.username) && (user.username.toLowerCase().includes(searchQuery).toLowerCase()))
-    })
-    .map(user => (
+    const mappedUser = users.map(user => (
         <UserCard key={user.id} user={user} {...user} handleUserDelete={handleDeleteUser}/>
-    )), [users, searchQuery, handleDeleteUser]
-    )
+    ))
 
   return (
     <div>
-        {renderUsers}
+        {mappedUser}
     </div>
   )
 }

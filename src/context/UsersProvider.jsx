@@ -1,9 +1,16 @@
-import React, { useState, useEffect, useCallback } from 'react'
+import React, { useState, useEffect } from 'react'
 
 export const UsersContext = React.createContext()
 
 const UsersProvider = ({ children }) => {
     const [users, setUsers] = useState([]);
+
+    const currentUser = {
+        id: 'Steph',
+        username: 'Steph',
+        score1: '',
+        score2: ''
+    }
 
     useEffect(() => {
         (async () => {
@@ -21,24 +28,22 @@ const UsersProvider = ({ children }) => {
         setUsers(currentUserList => [createdUser, ...currentUserList]) 
     }
 
-    // const handlePatchProject = (updatedProject) => {
-    //     setProjects(currentProjects => currentProjects.map(project => (
-    //         project.id === updatedProject.id ? updatedProject : project
-    //     )))
-    // }
+    const handleUpdateScore = () => {
 
-    const handleDeleteUser = useCallback((userToRemove) => {
-        setUsers(currentUsers => currentUsers.filter(user => user.id !== userToRemove.id))
-        return fetch(`http://localhost:3000/users/${userToRemove.id}`, { method: "DELETE" })
-            .catch((err) => {
-                alert(err)
-                setUsers(current => [...current, userToRemove])
-            })
-        // .then(() => navigate("/projects"))
-    }, [])
+    }
+
+    //! Need to be fixed
+    // const handleDeleteUser = useCallback((userToRemove) => {
+    //     setUsers(currentUsers => currentUsers.filter(user => user.id !== userToRemove.id))
+    //     return fetch(`http://localhost:3000/users/${userToRemove.id}`, { method: "DELETE" })
+    //         .catch((err) => {
+    //             alert(err)
+    //             setUsers(current => [...current, userToRemove])
+    //         })
+    // }, [])
 
     return (
-        <UsersContext.Provider value={{ users , handleAddUser, handleDeleteUser}}>
+        <UsersContext.Provider value={{currentUser, users , handleAddUser}}>
             {children}
         </UsersContext.Provider>
     )

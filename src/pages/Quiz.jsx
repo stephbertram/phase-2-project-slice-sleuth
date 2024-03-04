@@ -2,6 +2,8 @@ import NavBar from "../Components/NavBar"
 import {useEffect, useState} from 'react'
 import PizzaCard from "../Components/PizzaCard"
 import {Link} from "react-router-dom"
+import { useContext } from "react"
+import { UsersContext } from "../context/UsersProvider"
 
 
 const Quiz = () => {
@@ -15,12 +17,20 @@ const Quiz = () => {
   const displayPizza = currentPizzas[currentIndex]
   const URL = 'http://localhost:3000/pizzas'
 
+  //! Trying to hardcode user for patching
+
+  const {currentUser} = useContext(UsersContext)
+
+  console.log(currentUser)
+
+  //! Impliment new round
   const newRound = () => {
     setRound(round => round + 1)
     setCurrentIndex(0)
     setScore(0)
   }
 
+  //! Fetching of our Pizza database
   useEffect(() => {
     fetch(URL)
     .then((r)=> {
@@ -33,6 +43,7 @@ const Quiz = () => {
     .catch((err) => setError(err.message))
   }, []);
 
+  //! Point system with two buttons (Real Pizza, AI Lie)
   const handleNextPizza = (event) => {
 
     if(event.target.value === 'AIpie' && displayPizza.AI === true) {
@@ -49,7 +60,6 @@ const Quiz = () => {
     setCurrentIndex(currentIndex => currentIndex + 1);
   
   }
- 
 
   return (
 
@@ -64,7 +74,7 @@ const Quiz = () => {
         </div>
         {/* create display pizza container? */}
         {displayPizza ?
-        <PizzaCard {...displayPizza} key={displayPizza.id} handleNextPizza={handleNextPizza} score={score}/> :
+        <PizzaCard {...displayPizza} key={displayPizza.id} handleNextPizza={handleNextPizza} score={score} currentUser={currentUser}/> :
         score > 6 ? 
           <>
           <h1>Your score is {score}. Amazing!</h1> 

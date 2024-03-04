@@ -1,7 +1,7 @@
-import {useState, useContext} from 'react';
+import { useState, useContext } from 'react';
 // import { Link } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
-import {UsersContext} from '../context/UsersProvider'
+import { UsersContext } from '../context/UsersProvider'
 import { Link } from 'react-router-dom';
 
 const initialState = {
@@ -21,7 +21,6 @@ function SignUp() {
     setShowButton(!showButton)
   }
 
-
     const handleSubmit = (e) => {
       e.preventDefault()
 
@@ -38,11 +37,13 @@ function SignUp() {
         .catch(err => setError(err.message))
     }
 
+    //! Does two clicks at once
     const handleBothClicks = (event) => {
       toggleRemoveButton()
       handleSubmit(event)
     }
 
+    //! Tracks information added into input box
     const handleChange = (event) => { 
       setFormData({...formData, [event.target.name]: event.target.value})
     }

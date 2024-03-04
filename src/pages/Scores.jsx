@@ -4,13 +4,13 @@ import UserContainer from "../Components/UserContainer";
 
 
 
-const UserPage = () => {
+const Scores = () => {
 
   return (
     <>
     <header><NavBar /></header>
     <main>
-      <h1>User Page</h1>
+      <h1>Scores</h1>
       <UserContainer/>
     </main>
 
@@ -18,4 +18,4 @@ const UserPage = () => {
   )
 }
 
-export default UserPage
+export default Scores
