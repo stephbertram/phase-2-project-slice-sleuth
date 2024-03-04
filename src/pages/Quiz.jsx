@@ -15,7 +15,7 @@ const Quiz = () => {
   const [round, setRound] = useState(1)
   const currentPizzas = pizzas.filter(p => p.round == round)
   const displayPizza = currentPizzas[currentIndex]
-  const URL = 'http://localhost:3000/pizzas'
+  const API = 'http://localhost:3000'
 
 
   //! Trying to hardcode user for patching
@@ -38,7 +38,7 @@ const Quiz = () => {
       toast.error('You must create an username first')
       navigateToHome("/")
     }
-    fetch(URL)
+    fetch(API + '/pizzas')
     .then((r)=> {
       if(!r.ok){
         throw new Error ('The json server is not running.')
@@ -60,9 +60,21 @@ const Quiz = () => {
     }
 
     if(currentIndex + 1 == currentPizzas.length) {
+      console.log(currentIndex)
+      console.log(score)
       // fetch to add score to user
-      // const body = {[`score${round}`]: score}
+
+    fetch (API + `/users/${currentUser.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({[`score${round}`]: score}),
+    })
+      .then(resp => resp.json())
+      // .then((updatedUser) => onUpdateItem(updatedUser))
     }
+    
     setCurrentIndex(currentIndex => currentIndex + 1);
   
   }
@@ -88,7 +100,7 @@ const Quiz = () => {
           </>
           : 
           <>
-          <h1>Your score is {score}. You can do better!</h1>
+          <h1>Your {currentUser.username} score is {score}. You can do better!</h1>
           <button><Link to={'/scores/'}>Check out your score</Link></button>
           </>}
           {!displayPizza && pizzas && round < 2 ? 
