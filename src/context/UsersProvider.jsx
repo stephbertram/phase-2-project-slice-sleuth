@@ -23,6 +23,14 @@ const UsersProvider = ({ children }) => {
         setCurrentUser(createdUser)
     }
 
+    const updateUser = (updatedUser) => {
+        setCurrentUser(updatedUser)
+    }
+
+    const updateUserList = (updatedUser) => {
+        setUsers(currentUserList => currentUserList.map((user) => user.id === updatedUser.id ? updatedUser : user))
+    }
+
     //! Need to be fixed
     // const handleDeleteUser = useCallback((userToRemove) => {
     //     setUsers(currentUsers => currentUsers.filter(user => user.id !== userToRemove.id))
@@ -34,7 +42,7 @@ const UsersProvider = ({ children }) => {
     // }, [])
 
     return (
-        <UsersContext.Provider value={{currentUser, users , handleAddUser}}>
+        <UsersContext.Provider value={{currentUser, users , handleAddUser, updateUser, updateUserList }}>
             {children}
         </UsersContext.Provider>
     )

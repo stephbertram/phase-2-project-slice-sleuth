@@ -7,7 +7,7 @@
     text-align: center;
 }
 
-.quiz-page-button{
+.quiz-button-default{
     padding: 15px;
     
 }
@@ -16,4 +16,12 @@
     margin-top: 15px;
     padding: 10px;
     background: orange;
+}
+
+.correct{
+    background: green
+}
+
+.incorrect{
+    background: red
 }
