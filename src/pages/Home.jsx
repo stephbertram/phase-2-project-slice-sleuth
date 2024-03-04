@@ -1,7 +1,7 @@
 
 import SignUp from "../Components/SignUp"
-// import {useState} from 'react'
 import NavBar from "../Components/NavBar"
+
 
 const Home = () => {
 

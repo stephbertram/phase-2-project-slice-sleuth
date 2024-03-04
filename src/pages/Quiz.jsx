@@ -1,9 +1,9 @@
 import NavBar from "../Components/NavBar"
-import {useEffect, useState} from 'react'
+import {useEffect, useState, useContext} from 'react'
 import PizzaCard from "../Components/PizzaCard"
-import {Link} from "react-router-dom"
-import { useContext } from "react"
+import { Link , useNavigate } from "react-router-dom"
 import { UsersContext } from "../context/UsersProvider"
+import {toast} from "react-hot-toast"
 
 
 const Quiz = () => {
@@ -17,9 +17,11 @@ const Quiz = () => {
   const displayPizza = currentPizzas[currentIndex]
   const URL = 'http://localhost:3000/pizzas'
 
+
   //! Trying to hardcode user for patching
 
   const {currentUser} = useContext(UsersContext)
+  const navigateToHome = useNavigate()
 
   console.log(currentUser)
 
@@ -32,6 +34,10 @@ const Quiz = () => {
 
   //! Fetching of our Pizza database
   useEffect(() => {
+    if(!currentUser){
+      toast.error('You must create an username first')
+      navigateToHome("/")
+    }
     fetch(URL)
     .then((r)=> {
       if(!r.ok){
@@ -78,12 +84,12 @@ const Quiz = () => {
         score > 6 ? 
           <>
           <h1>Your score is {score}. Amazing!</h1> 
-          <button><Link to={'../userPage/'}>Check out your score</Link></button>
+          <button><Link to={'/scores/'}>Check out your score</Link></button>
           </>
           : 
           <>
           <h1>Your score is {score}. You can do better!</h1>
-          <button><Link to={'../userPage/'}>Check out your score</Link></button>
+          <button><Link to={'/scores/'}>Check out your score</Link></button>
           </>}
           {!displayPizza && pizzas && round < 2 ? 
             <button onClick={newRound}>Play next round?</button> : null
