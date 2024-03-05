@@ -4,7 +4,7 @@ import './NavBar.css'
 function NavBar() {
   return (
     <div>
-          <h1>Slice Sleuth</h1>
+          <h1>Slice Sleuth🍕</h1>
           <nav className="navbar">
               <ul>
                 <li><NavLink to="/" className="nav-link">Home</NavLink></li>
