@@ -11,6 +11,7 @@ const Home = () => {
       <header>
         <NavBar />    
       </header>
+      <br></br>
       <main>
         <SignUp/>
       </main>
