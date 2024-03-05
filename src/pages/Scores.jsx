@@ -9,6 +9,7 @@ const Scores = () => {
   return (
     <>
     <header><NavBar /></header>
+    <br></br>
     <main>
       <h1>Scores</h1>
       <UserContainer/>

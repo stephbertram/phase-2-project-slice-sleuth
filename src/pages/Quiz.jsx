@@ -73,7 +73,6 @@ const Quiz = () => {
     if(currentIndex + 1 == currentPizzas.length) {
       console.log(currentIndex)
       console.log(score)
-      // fetch to add score to user
 
     fetch (API + `/users/${currentUser.id}`, {
       method: "PATCH",
@@ -87,7 +86,6 @@ const Quiz = () => {
         updateUser(updatedUser)
         updateUserList(updatedUser)
       })
-      // .then(updateUserList)
     }
     
     setTimeout(() => {
@@ -103,6 +101,7 @@ const Quiz = () => {
       <header>
         <NavBar />
       </header>
+      <br></br>
       <main>
         <div>
           <h2>Play Slice Sleuth</h2>
@@ -117,7 +116,7 @@ const Quiz = () => {
           </>
           : 
           <>
-          <h1>Your {currentUser.username} score is {score}. You can do better!</h1>
+          <h1>Your score is {score}. You can do better!</h1>
           <button><Link to={'/scores/'}>Check out the leaderboard.</Link></button>
           </>}
           {!displayPizza && pizzas && round < 2 ? 
