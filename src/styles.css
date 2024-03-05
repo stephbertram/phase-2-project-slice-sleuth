@@ -19,9 +19,13 @@
 }
 
 .correct{
-    background: green
+    background: green;
+    font-weight: bold;
+    color: black
 }
 
 .incorrect{
-    background: red
+    background: red;
+    font-weight: bold;
+    color: black
 }

@@ -16,7 +16,9 @@ const Quiz = () => {
   const [round, setRound] = useState(1)
   const currentPizzas = pizzas.filter(p => p.round == round)
   const displayPizza = currentPizzas[currentIndex]
-  const [buttonClass, setButtonClass] = useState('quiz-button-default')
+  const [disabled, setDisabled] = useState(false)
+  // const [realButtonClass, setRealButtonClass] = useState('quiz-button-default')
+  // const [aiButtonClass, setAiButtonClass] = useState('quiz-button-default')
 
   //! Trying to hardcode user for patching
 
@@ -59,9 +61,14 @@ const Quiz = () => {
     }
     else if(event.target.value === 'realpie' && displayPizza.AI === false) {
       setScore((currentScore) => currentScore + 1 )
-      setButtonClass('incorrect')
-      setTimeout(() => {setButtonClass('quiz-button-default')}, 2000)
+      setButtonClass('correct')
+      setTimeout(() => {setButtonClass('quiz-button-default')}, 1000)
     }
+    else {
+      setButtonClass('incorrect')
+      setTimeout(() => {setButtonClass('quiz-button-default')}, 1000)
+    }
+    setDisabled(true)
 
     if(currentIndex + 1 == currentPizzas.length) {
       console.log(currentIndex)
@@ -83,8 +90,10 @@ const Quiz = () => {
       // .then(updateUserList)
     }
     
-    setCurrentIndex(currentIndex => currentIndex + 1);
-  
+    setTimeout(() => {
+      setCurrentIndex(currentIndex => currentIndex + 1)
+      setDisabled(false)
+    }, 2000)
   }
 
   return (
@@ -100,7 +109,7 @@ const Quiz = () => {
         </div>
         {/* create display pizza container? */}
         {displayPizza ?
-        <PizzaCard {...displayPizza} key={displayPizza.id} handleNextPizza={handleNextPizza} score={score} currentUser={currentUser} buttonClass={buttonClass}/> :
+        <PizzaCard disabled={disabled} {...displayPizza} key={displayPizza.id} handleNextPizza={handleNextPizza} score={score} currentUser={currentUser} buttonClass={buttonClass}/> :
         score > 6 ? 
           <>
           <h1>Your score is {score}. Amazing!</h1> 
