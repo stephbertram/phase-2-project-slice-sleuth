@@ -4,6 +4,7 @@ const Timer = ({stop}) => {
 
     const [timer, setTimer] = useState(0)
     
+    //! WIP
     useEffect(() => {
         const intervalId = setInterval(() => {
             if(!stop){

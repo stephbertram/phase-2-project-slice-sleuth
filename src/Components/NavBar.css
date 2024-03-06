@@ -15,8 +15,9 @@
 
 }
 
-.active {
+.navbar .active {
     color: red;
+    font-weight: bold;
 }
 
 li{
@@ -26,4 +27,13 @@ li{
 ul{
     list-style-type: none;
     padding-left: 0px
+}
+
+.title{
+    font-size: 50px;
+}
+
+img{
+    width: 75px;
+    height: 75px;
 }

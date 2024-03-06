@@ -10,8 +10,7 @@ const Scores = () => {
     <>
     <header><NavBar /></header>
     <br></br>
-    <main className='score-body'>
-      <h1>Scores</h1>
+    <main className = 'score-body'>
       <UserContainer/>
     </main>
 
