@@ -5,6 +5,10 @@
 
 .pizza-container{
     text-align: center;
+    border: 20px solid rgb(215, 131, 78);
+    padding-bottom: 12px;
+    background-color: rgb(247, 197, 96);
+    border-radius: 50px;
 }
 
 .quiz-button-default{
@@ -31,13 +35,19 @@
     margin-top: 10px;
     margin-left: 10px;
     display: inline-block;
-    text-align: center
+    text-align: center;
+    background-color: white;
 }
 
 /* This is for the pizza cursor */
 body{
     cursor:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🍕</text></svg>") 16 0,auto;
 }
+
+.quiz-body{
+    cursor:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🔎</text></svg>") 16 0,auto;
+}
+
 
 .main-container{
 
@@ -46,6 +56,7 @@ body{
     align-items: center;
     justify-content: center;
     height: 100vh;
+    border-radius:25px
 
 }
 
@@ -90,3 +101,20 @@ a:-webkit-any-link {
     text-decoration: none;
     color: inherit;
   }
+
+.score-body{
+    background-image: url(/images/pizza-dancing-pizza.gif);
+    height: 100vh;
+} 
+
+#main-body{
+    font-family:'Courier New', Courier, monospace;
+}
+
+.home-body{
+    background-color: #fef1dc;
+}
+
+.introduction{
+    
+}

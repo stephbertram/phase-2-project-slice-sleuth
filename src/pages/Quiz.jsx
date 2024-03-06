@@ -4,6 +4,7 @@ import PizzaCard from "../Components/PizzaCard"
 import { Link , useNavigate } from "react-router-dom"
 import { UsersContext } from "../context/UsersProvider"
 import {toast} from "react-hot-toast"
+import Timer from "../Components/Timer"
 
 const API = 'http://localhost:3000'
 
@@ -17,6 +18,8 @@ const Quiz = () => {
   const currentPizzas = pizzas.filter(p => p.round == round)
   const displayPizza = currentPizzas[currentIndex]
   const [disabled, setDisabled] = useState(false)
+
+  const [buttonClass, setButtonClass] = useState('correct')
   // const [realButtonClass, setRealButtonClass] = useState('quiz-button-default')
   // const [aiButtonClass, setAiButtonClass] = useState('quiz-button-default')
 
@@ -36,7 +39,7 @@ const Quiz = () => {
 
   //! Fetching of our Pizza database
   useEffect(() => {
-    if(!currentUser){
+    if(!currentUser || currentUser === ''){
       toast.error('You must create an username first')
       navigateToHome("/")
     }
@@ -57,16 +60,16 @@ const Quiz = () => {
     if(event.target.value === 'AIpie' && displayPizza.AI === true) {
       setScore((currentScore) => currentScore + 1 )
       setButtonClass('correct')
-      setTimeout(() => {setButtonClass('quiz-button-default')}, 2000)
+      setTimeout(() => {setButtonClass('quiz-button-default')}, 500)
     }
     else if(event.target.value === 'realpie' && displayPizza.AI === false) {
       setScore((currentScore) => currentScore + 1 )
       setButtonClass('correct')
-      setTimeout(() => {setButtonClass('quiz-button-default')}, 1000)
+      setTimeout(() => {setButtonClass('quiz-button-default')}, 500)
     }
     else {
       setButtonClass('incorrect')
-      setTimeout(() => {setButtonClass('quiz-button-default')}, 1000)
+      setTimeout(() => {setButtonClass('quiz-button-default')}, 500)
     }
     setDisabled(true)
 
@@ -91,7 +94,7 @@ const Quiz = () => {
     setTimeout(() => {
       setCurrentIndex(currentIndex => currentIndex + 1)
       setDisabled(false)
-    }, 2000)
+    }, 500)
   }
 
   return (
@@ -102,9 +105,11 @@ const Quiz = () => {
         <NavBar />
       </header>
       <br></br>
-      <main>
+      <main className ='quiz-body'>
         <div>
-          <h2>Play Slice Sleuth</h2>
+          <br></br>
+          <Timer />
+          <br></br>
         </div>
         {/* create display pizza container? */}
         {displayPizza ?
