@@ -5,23 +5,23 @@ import { UsersContext } from '../context/UsersProvider'
 import { Link } from 'react-router-dom';
 import {object, string} from 'yup'
 
-const initialState = {
-  id: uuidv4(),
-  username: "",
-  score1: "",
-  score2: ""
-};
 
 function SignUp() {
+  const initialState = {
+    id: uuidv4(),
+    username: "",
+    score1: "",
+    score2: ""
+  };
   const [formData, setFormData] = useState(initialState)
   const [error, setError] = useState("")
   const {handleAddUser} = useContext(UsersContext)
-  const [showButton, setShowButton] = useState(true)
+  // const [showButton, setShowButton] = useState(true)
   const [formErrors, setFormErrors] = useState({})
 
-    const toggleRemoveButton = () => {
-    setShowButton(!showButton)
-    }
+    // const toggleRemoveButton = () => {
+    // setShowButton(!showButton)
+    // }
 
     const usernameSchema = object().shape({
       username: string().required('Username is required!')
@@ -73,22 +73,41 @@ function SignUp() {
 
 
     return (
+    //   <div>
+    //   {error ? <p>{error}</p> : null}
+    //   <main className='main-container'>
+    //     <h3 className='title-container'>Create an username to play:</h3>
+    //     <form className='input-container' onSubmit ={handleSubmit}>
+    //       <div>
+    //         {showButton && <input className='input-box' id="username" type="text" name="username" placeholder="Username" value={formData.username} onChange={handleChange}/>}
+    //       </div>
+    //       <div>
+    //         {showButton && <button className='button-container' onClick={handleBothClicks}>Submit</button>}
+    //         {!showButton ? 
+    //           <>
+    //             <h3>Hello '{formData.username}' </h3> 
+    //             <button className='button-container'><Link to={'/quiz'} style={{textDecoration: 'none', color: 'white'}}>Time to test your knowledge</Link></button>
+    //           </>
+    //           : null}
+    //       </div>
+    //     </form>
+    //   </main>
+    // </div>
+
       <div>
         {error ? <p>{error}</p> : null}
         <main className='main-container'>
           <h3 className='title-container'>Create an username to play:</h3>
           <form className='input-container' onSubmit ={handleSubmit}>
             <div>
-              {showButton && <input className='input-box' id="username" type="text" name="username" placeholder="Username" value={formData.username} onChange={handleChange}/>}
+              <input className='input-box' id="username" type="text" name="username" placeholder="Username" value={formData.username} onChange={handleChange}/>
             </div>
             <div>
-              {showButton && <button className='button-container' onClick={handleBothClicks}>Submit</button>}
-              {!showButton ? 
+              <button className='button-container' onClick={handleBothClicks}>Submit</button>
                 <>
                   <h3>Hello '{formData.username}' </h3> 
                   <button className='button-container'><Link to={'/quiz'} style={{textDecoration: 'none', color: 'white'}}>Time to test your knowledge</Link></button>
                 </>
-                : null}
             </div>
           </form>
         </main>
