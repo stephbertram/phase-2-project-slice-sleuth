@@ -4,7 +4,6 @@ import PizzaCard from "../Components/PizzaCard"
 import { Link , useNavigate } from "react-router-dom"
 import { UsersContext } from "../context/UsersProvider"
 import {toast} from "react-hot-toast"
-import Timer from "../Components/Timer"
 
 const API = 'http://localhost:3000'
 
@@ -18,16 +17,11 @@ const Quiz = () => {
   const [disabled, setDisabled] = useState(false)
   const [realButtonClass, setRealButtonClass] = useState('quiz-button-default')
   const [aiButtonClass, setAiButtonClass] = useState('quiz-button-default')
- 
   const currentPizzas = pizzas.filter(p => p.round == round)
   const displayPizza = currentPizzas[currentIndex]
-
-  //! Trying to hardcode user for patching
-
   const {currentUser, updateUser, updateUserList} = useContext(UsersContext)
   const navigateToHome = useNavigate()
 
-  console.log(currentUser)
 
   //! Impliment new round
   const newRound = () => {
@@ -85,32 +79,8 @@ const Quiz = () => {
     }
     setDisabled(true)
 
+    //! on last page
     if(currentIndex + 1 == currentPizzas.length) {
-      console.log(currentIndex)
-      console.log(score)
-
-
-    // new Promise((resolveOuter) => {
-    //   resolveOuter(
-    //     new Promise((resolveInner) => {
-    //       setTimeout(resolveInner, 1000)
-    //     }),
-    //   )
-    // })
-    //   .then(() => {
-    //     fetch(API + `/users/${currentUser.id}`, {
-    //       method: "PATCH",
-    //       headers: {
-    //         "Content-Type": "application/json",
-    //       },
-    //       body: JSON.stringify({ [`score${round}`]: score }),
-    //     })
-    //       .then((resp) => resp.json())
-    //       .then((updatedUser) => {
-    //         updateUser(updatedUser);
-    //         updateUserList(updatedUser)
-    //       })
-    //   })
 
     const finalScore = correctAnswer ? score + 1 : score
 
@@ -147,10 +117,8 @@ const Quiz = () => {
       <main className ='quiz-body'>
         <div>
           <br></br>
-          <Timer />
           <br></br>
         </div>
-        {/* create display pizza container? */}
         {displayPizza ?
         <PizzaCard 
           disabled={disabled} 
@@ -159,22 +127,21 @@ const Quiz = () => {
           handleNextPizza={handleNextPizza} 
           score={score} 
           currentUser={currentUser} 
-          // buttonClass={buttonClass}/> 
           aiButtonClass={aiButtonClass}
           realButtonClass={realButtonClass} /> 
           :
         score > 6 ? 
           <>
-          <h1>Your score is {score}. Amazing!</h1> 
-          <button><Link to={'/scores/'}>Check out the leaderboard.</Link></button>
+          <h1>Your score is {score}. Amazing!  <img src='../images/dancing.gif'/></h1> 
+          <button className='leaderboard-button'><Link to={'/scores/'}>Check out the leaderboard.</Link></button>
           </>
           : 
           <>
-          <h1>Your score is {score}. You can do better!</h1>
-          <button><Link to={'/scores/'}>Check out the leaderboard.</Link></button>
+          <h1>Your score is {score}. You can do better! <iframe src="https://giphy.com/embed/S5wRNlSxMxGK2iKFnI" width="150" height="150" ></iframe><p><a href="https://giphy.com/gifs/PureMagicPictures-funny-food-sad-S5wRNlSxMxGK2iKFnI"></a></p></h1>
+          <button className='leaderboard-button'><Link to={'/scores/'}>Check out the leaderboard.</Link></button>
           </>}
           {!displayPizza && pizzas && round < 2 ? 
-            <button onClick={newRound}>Play next round?</button> : null
+            <button className='leaderboard-button' onClick={newRound}>Play next round?</button> : null
           }
       </main>
     </>
