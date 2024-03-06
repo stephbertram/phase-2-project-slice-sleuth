@@ -4,6 +4,7 @@ import PizzaCard from "../Components/PizzaCard"
 import { Link , useNavigate } from "react-router-dom"
 import { UsersContext } from "../context/UsersProvider"
 import {toast} from "react-hot-toast"
+import Timer from "../Components/Timer"
 
 const API = 'http://localhost:3000'
 
@@ -123,7 +124,6 @@ const Quiz = () => {
       .then(resp => resp.json())
       .then(updatedUser => {
         console.log(currentUser)
-        debugger
         updateUser(updatedUser)
         updateUserList(updatedUser)
       })
@@ -133,7 +133,7 @@ const Quiz = () => {
     setTimeout(() => {
       setCurrentIndex(currentIndex => currentIndex + 1)
       setDisabled(false)
-    }, 2000)
+    }, 500)
   }
   
   return (
@@ -144,9 +144,11 @@ const Quiz = () => {
         <NavBar />
       </header>
       <br></br>
-      <main>
+      <main className ='quiz-body'>
         <div>
-          <h2>Play Slice Sleuth</h2>
+          <br></br>
+          <Timer />
+          <br></br>
         </div>
         {/* create display pizza container? */}
         {displayPizza ?
