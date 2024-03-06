@@ -15,13 +15,12 @@ const Quiz = () => {
   const [score, setScore] = useState(0)
   const [currentIndex, setCurrentIndex] = useState(0);
   const [round, setRound] = useState(1)
+  const [disabled, setDisabled] = useState(false)
+  const [realButtonClass, setRealButtonClass] = useState('quiz-button-default')
+  const [aiButtonClass, setAiButtonClass] = useState('quiz-button-default')
+ 
   const currentPizzas = pizzas.filter(p => p.round == round)
   const displayPizza = currentPizzas[currentIndex]
-  const [disabled, setDisabled] = useState(false)
-
-  const [buttonClass, setButtonClass] = useState('correct')
-  // const [realButtonClass, setRealButtonClass] = useState('quiz-button-default')
-  // const [aiButtonClass, setAiButtonClass] = useState('quiz-button-default')
 
   //! Trying to hardcode user for patching
 
@@ -56,20 +55,33 @@ const Quiz = () => {
 
   //! Point system with two buttons (Real Pizza, AI Lie)
   const handleNextPizza = (event) => {
+  let correctAnswer = null
 
+    // Correct: Selected "AI Lie" button
     if(event.target.value === 'AIpie' && displayPizza.AI === true) {
       setScore((currentScore) => currentScore + 1 )
-      setButtonClass('correct')
-      setTimeout(() => {setButtonClass('quiz-button-default')}, 500)
+      setAiButtonClass('correct')
+      correctAnswer = true
+      setTimeout(() => {setAiButtonClass('quiz-button-default')}, 1000)
     }
+    // Correct: Selected "Real Pie" button
     else if(event.target.value === 'realpie' && displayPizza.AI === false) {
       setScore((currentScore) => currentScore + 1 )
-      setButtonClass('correct')
-      setTimeout(() => {setButtonClass('quiz-button-default')}, 500)
+      setRealButtonClass('correct')
+      correctAnswer = true
+      setTimeout(() => {setRealButtonClass('quiz-button-default')}, 1000)
     }
-    else {
-      setButtonClass('incorrect')
-      setTimeout(() => {setButtonClass('quiz-button-default')}, 500)
+    // Incorrect: Selected "Real Pie" button but is AI
+    else if(event.target.value === 'realpie' && displayPizza.AI === true) {
+      setRealButtonClass('incorrect')
+      correctAnswer = false
+      setTimeout(() => {setRealButtonClass('quiz-button-default')}, 1000)
+    }
+    // Incorrect : Selected "AI Lie" button but is Real
+    else if (event.target.value === 'AIpie' && displayPizza.AI === false) {
+      setAiButtonClass('incorrect')
+      correctAnswer = false
+      setTimeout(() => {setAiButtonClass('quiz-button-default')}, 1000)
     }
     setDisabled(true)
 
@@ -77,26 +89,53 @@ const Quiz = () => {
       console.log(currentIndex)
       console.log(score)
 
+
+    // new Promise((resolveOuter) => {
+    //   resolveOuter(
+    //     new Promise((resolveInner) => {
+    //       setTimeout(resolveInner, 1000)
+    //     }),
+    //   )
+    // })
+    //   .then(() => {
+    //     fetch(API + `/users/${currentUser.id}`, {
+    //       method: "PATCH",
+    //       headers: {
+    //         "Content-Type": "application/json",
+    //       },
+    //       body: JSON.stringify({ [`score${round}`]: score }),
+    //     })
+    //       .then((resp) => resp.json())
+    //       .then((updatedUser) => {
+    //         updateUser(updatedUser);
+    //         updateUserList(updatedUser)
+    //       })
+    //   })
+
+    const finalScore = correctAnswer ? score + 1 : score
+
     fetch (API + `/users/${currentUser.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({[`score${round}`]: score}),
+      body: JSON.stringify({[`score${round}`]: finalScore}),
     })
       .then(resp => resp.json())
       .then(updatedUser => {
+        console.log(currentUser)
         updateUser(updatedUser)
         updateUserList(updatedUser)
       })
     }
     
+
     setTimeout(() => {
       setCurrentIndex(currentIndex => currentIndex + 1)
       setDisabled(false)
     }, 500)
   }
-
+  
   return (
 
     <>
@@ -113,7 +152,17 @@ const Quiz = () => {
         </div>
         {/* create display pizza container? */}
         {displayPizza ?
-        <PizzaCard disabled={disabled} {...displayPizza} key={displayPizza.id} handleNextPizza={handleNextPizza} score={score} currentUser={currentUser} buttonClass={buttonClass}/> :
+        <PizzaCard 
+          disabled={disabled} 
+          {...displayPizza} 
+          key={displayPizza.id} 
+          handleNextPizza={handleNextPizza} 
+          score={score} 
+          currentUser={currentUser} 
+          // buttonClass={buttonClass}/> 
+          aiButtonClass={aiButtonClass}
+          realButtonClass={realButtonClass} /> 
+          :
         score > 6 ? 
           <>
           <h1>Your score is {score}. Amazing!</h1> 
@@ -128,7 +177,7 @@ const Quiz = () => {
             <button onClick={newRound}>Play next round?</button> : null
           }
       </main>
-      </>
+    </>
   )
 }
 
