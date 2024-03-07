@@ -16,8 +16,9 @@ const Home = () => {
           <br></br>
           <br></br>
           <br></br>
-          <h3>You are a guest detective at a pizza parlor. </h3>
-          <h3>You must discover which pizza is AI LIE. </h3>
+          <h1 >The Case of the Imposter Pies</h1>
+          <br></br>
+          <p>Your goal is to decipher which pizzas are real pies and which are AI lies. There are two rounds of 10 pizzas each. Each correct answer scores one point. Good luck!</p>
         </div>
         <SignUp/>
       </div>
