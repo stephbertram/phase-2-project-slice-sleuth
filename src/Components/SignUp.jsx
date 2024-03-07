@@ -1,7 +1,7 @@
 import { useState, useContext } from 'react';
 import { v4 as uuidv4 } from "uuid";
 import { UsersContext } from '../context/UsersProvider'
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import {object, string} from 'yup'
 
 
@@ -17,6 +17,7 @@ function SignUp() {
   const [formData, setFormData] = useState(initialState)
   const [error, setError] = useState("")
   const {handleAddUser} = useContext(UsersContext)
+  const navigate = useNavigate()
 
     const usernameSchema = object().shape({
       username: string().required('Username is required!')
@@ -35,6 +36,7 @@ function SignUp() {
         })
           .then(resp => resp.json())
           .then(newUser => handleAddUser(newUser))
+          .then(() => navigate("/quiz"))
           .catch(err => setError(err.message))
       ).catch(yupError => setError(yupError.message))
     }   
@@ -61,7 +63,7 @@ function SignUp() {
                 <input className='input' id="username" type="text" name="username" placeholder="Username" value={formData.username} onChange={handleChange}/>
               </div>
               <div className="button-container">
-                <button className='submit-button'><Link to={"/quiz"}>Submit</Link></button>
+                <button className='submit-button'>Submit</button>
               </div>
             </form>
           </div>  

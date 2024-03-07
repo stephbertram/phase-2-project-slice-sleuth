@@ -19,8 +19,9 @@ const UsersProvider = ({ children }) => {
     }, [])
 
     const handleAddUser = (createdUser) => {
-        setUsers(currentUserList => [createdUser, ...currentUserList]) 
         setCurrentUser(createdUser)
+        setUsers(currentUserList => [createdUser, ...currentUserList]) 
+
     }
 
     const updateUser = (updatedUser) => {

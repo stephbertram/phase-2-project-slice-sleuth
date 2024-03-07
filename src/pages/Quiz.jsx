@@ -32,7 +32,7 @@ const Quiz = () => {
 
   //! Fetching of our Pizza database
   useEffect(() => {
-    if(!currentUser || currentUser === ''){
+    if(!currentUser){
       toast.error('You must create an username first')
       navigateToHome("/")
     }
