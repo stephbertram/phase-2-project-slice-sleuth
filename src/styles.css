@@ -65,46 +65,64 @@ body{
 }
 
 
-.main-container{
+/* Home Page */
 
-    flex-direction: column;
+.signup-container{
+    flex-direction: row;
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     justify-content: center;
     height: 100vh;
     border-radius:25px;
+    margin: 60px 20px 20px 20px;
 }
 
-.title-container{
-    font-size: 64px;
+.introduction p{
+    font-size: 18px;
+}
+
+/* Sign Up */
+
+.signup-container{
+   display: flex; 
+   flex-wrap: wrap;
+   justify-content: center;
+}
+
+.signup-container h3 {
+    font-size: 25px;
     font-weight: bolder;
-    align-items: center;
-    justify-content: center; 
 }
 
-.input-container{
-    align-items: flex-start;
-    justify-content: center;
+.h3-container {
+    padding-right: 10px;
 }
 
-.input-box{
+.input{
     height: 48px;
     width: 400px;
-    font-size: large;
+    font-size: 20px;
     border-radius: 8px;
     border: 1px solid grey;
     padding-left: 8px;
+    font-family:'Courier New', Courier, monospace;
 }
 
-.button-container{
-    align-items: center;
-    justify-content: center;
+.submit-button{
+    /* align-items: center;
+    justify-content: center; */
     width: 260px;
     height: 50px;
     margin-top: 10px;
     background-color: rgb(248, 81, 15);
-    text-decoration: none
+    text-decoration: none;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bolder;
+    font-size: 20px;
 }
+
+/* End of Sign Up */
+
 
 a:-webkit-any-link {
     text-decoration: none;
@@ -134,7 +152,7 @@ a:-webkit-any-link {
 .introduction{
     font-size: 15px;
     text-align: left;
-    padding-left: 15px;
+    padding-left: 30px;
 }
 
 .searchbar{
@@ -148,3 +166,4 @@ a:-webkit-any-link {
     background-color: white;
     border-radius: 50px;
 }
+

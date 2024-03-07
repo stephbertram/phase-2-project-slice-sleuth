@@ -49,20 +49,24 @@ function SignUp() {
 
     return (
 
-      <div>
+      <>
         {error ? <p>{error}</p> : null}
-        <main className='main-container'>
-          <h3 className='title-container'>Create an username to play:</h3>
-          <form className='input-container' onSubmit ={handleSubmit}>
-            <div>
-              <input className='input-box' id="username" type="text" name="username" placeholder="Username" value={formData.username} onChange={handleChange}/>
-            </div>
-            <div>
-              <button className='button-container'><Link to={"/quiz"}>Submit</Link></button>
-            </div>
-          </form>
-        </main>
-      </div>
+        <div className='signup-container'>
+          <div className='h3-container'>
+            <h3>Create a username to play:</h3>
+          </div>
+          <div className="form-container">
+            <form className='form' onSubmit ={handleSubmit}>
+              <div className="input-container">
+                <input className='input' id="username" type="text" name="username" placeholder="Username" value={formData.username} onChange={handleChange}/>
+              </div>
+              <div className="button-container">
+                <button className='submit-button'><Link to={"/quiz"}>Submit</Link></button>
+              </div>
+            </form>
+          </div>  
+        </div>
+      </>
     );
   }
   
