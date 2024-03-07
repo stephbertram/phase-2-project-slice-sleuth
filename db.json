@@ -3,70 +3,70 @@
     {
       "id": "1",
       "name": "Pizza 1",
-      "image": "https://res.cloudinary.com/drdtxuiez/image/upload/v1709314179/AI1_tsrbg5.jpg",
-      "AI": true,
+      "image": "https://res.cloudinary.com/dn5a6owkl/image/upload/v1709788245/Round%201%20-%20Real%20Pizzas/Round1_Real_1_Edited_xm8nla.jpg",
+      "AI": false,
       "round": "1"
     },
     {
       "id": "2",
       "name": "Pizza 2",
-      "image": "https://res.cloudinary.com/drdtxuiez/image/upload/v1709314181/Pizza-2_ktarhg.jpg",
-      "AI": false,
+      "image": "https://res.cloudinary.com/dn5a6owkl/image/upload/v1709787959/Round%201%20-%20AI%20Pizzas/Round1_AI_1_Edited_ie7btv.jpg",
+      "AI": true,
       "round": "1"
     },
     {
       "id": "3",
       "name": "Pizza 3",
-      "image": "https://res.cloudinary.com/drdtxuiez/image/upload/v1709314182/Pizza3_jr1qgi.jpg",
+      "image": "https://res.cloudinary.com/dn5a6owkl/image/upload/v1709788252/Round%201%20-%20Real%20Pizzas/Round1_Real_2_Edited_jigw7m.png",
       "AI": false,
       "round": "1"
     },
     {
       "id": "4",
       "name": "Pizza 4",
-      "image": "https://res.cloudinary.com/drdtxuiez/image/upload/v1709314177/Pizzas4_whiter.jpg",
-      "AI": true,
+      "image": "https://res.cloudinary.com/dn5a6owkl/image/upload/v1709788257/Round%201%20-%20Real%20Pizzas/Round1_Real_3_Edited_quqcid.jpg",
+      "AI": false,
       "round": "1"
     },
     {
       "id": "5",
       "name": "Pizza 5",
-      "image": "https://res.cloudinary.com/drdtxuiez/image/upload/v1709314179/Pizza-5_zi3l7l.png",
+      "image": "https://res.cloudinary.com/dn5a6owkl/image/upload/v1709787962/Round%201%20-%20AI%20Pizzas/Round1_AI_2_Edited_kgqdxc.png",
       "AI": true,
       "round": "1"
     },
     {
       "id": "6",
       "name": "Pizza 6",
-      "image": "https://res.cloudinary.com/drdtxuiez/image/upload/v1709314179/Pizza-6_nzkftt.jpg",
-      "AI": true,
+      "image": "https://res.cloudinary.com/dn5a6owkl/image/upload/v1709788265/Round%201%20-%20Real%20Pizzas/Round1_Real_4_Edited_yg33pv.jpg",
+      "AI": false,
       "round": "1"
     },
     {
       "id": "7",
       "name": "Pizza 7",
-      "image": "https://res.cloudinary.com/drdtxuiez/image/upload/v1709314185/Pizza-7_f2x3kr.jpg",
-      "AI": false,
+      "image": "https://res.cloudinary.com/dn5a6owkl/image/upload/v1709788063/Round%201%20-%20AI%20Pizzas/Round1_AI_3_Edited_zjoh80.jpg",
+      "AI": true,
       "round": "1"
     },
     {
       "id": "8",
       "name": "Pizza 8",
-      "image": "https://res.cloudinary.com/drdtxuiez/image/upload/v1709314183/Pizza-8_ve8oja.jpg",
+      "image": "https://res.cloudinary.com/dn5a6owkl/image/upload/v1709788272/Round%201%20-%20Real%20Pizzas/Round1_Real_5_Edited_kpne5w.png",
       "AI": false,
       "round": "1"
     },
     {
       "id": "9",
       "name": "Pizza 9",
-      "image": "https://res.cloudinary.com/drdtxuiez/image/upload/v1709314183/Pizza-9_dp0n66.jpg",
+      "image": "https://res.cloudinary.com/dn5a6owkl/image/upload/v1709788278/Round%201%20-%20Real%20Pizzas/Round1_Real_6_Edited_dvyd31.jpg",
       "AI": false,
       "round": "1"
     },
     {
       "id": "10",
       "name": "Pizza 10",
-      "image": "https://res.cloudinary.com/drdtxuiez/image/upload/v1709314178/Pizza-10_qaixgc.jpg",
+      "image": "https://res.cloudinary.com/dn5a6owkl/image/upload/v1709787996/Round%201%20-%20AI%20Pizzas/Round1_AI_4_Edited_lxikpb.jpg",
       "AI": true,
       "round": "1"
     },
@@ -144,33 +144,75 @@
   "users": [
     {
       "id": "1",
-      "username": "user1",
-      "score1": "9",
-      "score2": "2"
+      "username": "pepperonipirate",
+      "score1": "4",
+      "score2": "6"
     },
     {
       "id": "9682f7f9-206d-425e-8f26-8dd425c6f052",
       "username": "sooj0106",
-      "score1": "8",
-      "score2": "5"
+      "score1": "10",
+      "score2": "10"
     },
     {
       "id": "62d7fc05-7d8e-4064-bf0b-a5d701ab05d9",
-      "username": "steph",
+      "username": "Leonardo",
       "score1": "9",
-      "score2": "9"
+      "score2": "5"
     },
     {
       "id": "8f3a9605-6f86-4ea3-8d89-c63146617def",
-      "username": "tester 700",
-      "score1": 9,
-      "score2": 9
+      "username": "cheesyChampion",
+      "score1": "9",
+      "score2": "8"
     },
     {
       "id": "29ddda3e-e290-4500-b656-407b6bde6624",
-      "username": "tester 899",
-      "score1": 4,
-      "score2": ""
+      "username": "Donatello",
+      "score1": "6",
+      "score2": "7"
+    },
+    {
+      "id": "368d1e64-44d9-4874-88ba-96a5be0072a9",
+      "username": "stephb",
+      "score1": "10",
+      "score2": "10"
+    },
+    {
+      "id": "a430743f-239d-4f6c-8894-51c0f0c58f1e",
+      "username": "pizzayumz",
+      "score1": "7",
+      "score2": "4"
+    },
+    {
+      "id": "8aa654d5-e83c-4106-967d-637d0f5b188a",
+      "username": "Michelangelo",
+      "score1": "5",
+      "score2": "10"
+    },
+    {
+      "id": "8aa654d5-e83c-4106-967d-637d0f5b188b",
+      "username": "matteo",
+      "score1": "1",
+      "score2": "2"
+    },
+    {
+      "id": "8aa654d5-e83c-4106-967d-637d0f5b188d",
+      "username": "turtle_power",
+      "score1": "5",
+      "score2": "10"
+    },
+    {
+      "id": "8aa654d5-e83c-4106-967d-637d0f5b188e",
+      "username": "toppingstornado",
+      "score1": "8",
+      "score2": "7"
+    },
+    {
+      "id": "8aa654d5-e83c-4106-967d-637d0f5b188f",
+      "username": "ZaDetective#1",
+      "score1": "8",
+      "score2": "7"
     }
   ]
 }

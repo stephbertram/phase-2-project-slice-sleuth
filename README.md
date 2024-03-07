@@ -2,9 +2,9 @@
 
 You are invited to a mysterious pizzas parlor. You must discover which pizzas in this parlor is the real pizza. Compete with other detectives and get the highest score possible!
 
-As a detective, you must write your name and it will direct you to the Slice Sleuth portion of the application. Each user is given two rounds to play.
+As a detective, you must submit your name and it will direct you to the Slice Sleuth portion of the application. Each user is given two rounds to play.
 
-We plan to implement actual log in feature that allows users to update their scores.
+We plan to implement actual login feature that allows users to update their scores.
 
 ## Installation
 
@@ -31,6 +31,14 @@ Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+## Photo Credits
+
+AI pizza photos were created using:
+- Bing Image Creator from Microsoft Designer: https://www.bing.com/images/create
+- Dream Studio by Stability AI: https://beta.dreamstudio.ai/generate
+
+Real pizza photos are from Unsplash: https://unsplash.com/
 
 ## License
 

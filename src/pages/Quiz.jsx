@@ -133,12 +133,12 @@ const Quiz = () => {
         score > 6 ? 
           <>
           <h1>Your score is {score}. Amazing!  <img src='../images/dancing.gif'/></h1> 
-          <button className='leaderboard-button'><Link to={'/scores/'}>Check out the leaderboard.</Link></button>
+          <button className='leaderboard-button'><Link to={'/scores/'}>Check out all scores.</Link></button>
           </>
           : 
           <>
           <h1>Your score is {score}. You can do better! <iframe src="https://giphy.com/embed/S5wRNlSxMxGK2iKFnI" width="150" height="150" ></iframe><p><a href="https://giphy.com/gifs/PureMagicPictures-funny-food-sad-S5wRNlSxMxGK2iKFnI"></a></p></h1>
-          <button className='leaderboard-button'><Link to={'/scores/'}>Check out the leaderboard.</Link></button>
+          <button className='leaderboard-button'><Link to={'/scores/'}>Check out all scores.</Link></button>
           </>}
           {!displayPizza && pizzas && round < 2 ? 
             <button className='leaderboard-button' onClick={newRound}>Play next round?</button> : null

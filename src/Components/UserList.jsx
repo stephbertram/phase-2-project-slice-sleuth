@@ -9,7 +9,7 @@ const UserList = ({currentUser, users, handleDeleteUser}) => {
     ))
 
   return (
-    <div>
+    <div className='users-wrapper'>
         {mappedUser}
     </div>
   )

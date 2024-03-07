@@ -3,7 +3,7 @@ const SearchBar = ({handleSearch, searchQuery}) => {
         <div className ='searchbar'>
         <input
             type="text"
-            placeholder="Searching..."
+            placeholder="Username Search"
             onChange={handleSearch}
             value={searchQuery}
         />
