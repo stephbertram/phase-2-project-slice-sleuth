@@ -6,6 +6,9 @@ As a detective, you must submit your name and it will direct you to the Slice Sl
 
 We plan to implement actual login feature that allows users to update their scores.
 
+![](/images/intro_slice_sleuth.gif) <br>
+![](/images/taking_quiz.gif)
+
 ## Installation
 
 1. Fork the repository.
